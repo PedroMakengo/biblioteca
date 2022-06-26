@@ -79,12 +79,12 @@
               <legend>Registar Aluno</legend>
               <form onsubmit="register()">
                 <div class="group">
-                  <label for="turma">Turma</label>
+                  <label for="turma">Turma</label><br />
                   <input type="text" name="turma" id="turma" />
                 </div>
                 <div class="group-inline">
                   <div class="group">
-                    <label for="firstName">Nome</label>
+                    <label for="firstName">Nome</label><br />
                     <input
                       type="text"
                       name="firstName"
@@ -93,7 +93,7 @@
                     />
                   </div>
                   <div class="group">
-                    <label for="lastName">Nome</label>
+                    <label for="lastName">Sobrenome</label><br />
                     <input
                       type="text"
                       name="lastName"
@@ -114,21 +114,18 @@
 
     <script>
       const btn = document.getElementById("btnSubmit");
-      const firstName = document.getElementsByTagName(
-        "input[name='firstName']"
-      ).value;
-      const lastName = document.getElementsByTagName(
-        "input[name='lastName']"
-      ).value;
-      const turma = document.getElementsByTagName("input[name='turma']").value;
+
+      let firstName = document.getElementById("firstName").value;
+      let lastName = document.getElementById("lastName").value;
+      let turma = document.getElementById("turma").value;
+
       const listUser = [];
 
       btn.addEventListener("click", function (e) {
         e.preventDefault();
         // Percorrendo todos os inputs do meu formulario
-        const users = { lastName, firstName, turma };
+        let users = { firstName, firstName, turma };
         listUser.push(users);
-        console.log(listUser);
       });
     </script>
   </body>

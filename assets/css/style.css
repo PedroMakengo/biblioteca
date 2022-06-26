@@ -98,3 +98,23 @@ main section .container .content fieldset legend {
   text-align: center;
   margin: auto 3rem;
 }
+
+main form {
+  padding-inline: 1rem;
+  padding-block: 1rem;
+}
+
+main form .group-inline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+main form .group-inline .group,
+main form .group-inline .group input {
+  width: 100%;
+}
+
+main form input {
+  width: 50%;
+}
