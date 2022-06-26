@@ -103,7 +103,7 @@
                   </div>
                 </div>
                 <div class="group">
-                  <button type="submit">Enviar</button>
+                  <button type="submit" id="btnSubmit">Enviar</button>
                 </div>
               </form>
             </fieldset>
@@ -111,5 +111,25 @@
         </div>
       </section>
     </main>
+
+    <script>
+      const btn = document.getElementById("btnSubmit");
+      const firstName = document.getElementsByTagName(
+        "input[name='firstName']"
+      ).value;
+      const lastName = document.getElementsByTagName(
+        "input[name='lastName']"
+      ).value;
+      const turma = document.getElementsByTagName("input[name='turma']").value;
+      const listUser = [];
+
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        // Percorrendo todos os inputs do meu formulario
+        const users = { lastName, firstName, turma };
+        listUser.push(users);
+        console.log(listUser);
+      });
+    </script>
   </body>
 </html>

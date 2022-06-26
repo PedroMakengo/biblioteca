@@ -6,10 +6,6 @@
 }
 
 :root {
-  --hue: 920;
-  --primary-color: hsl(var(--hue), 100%, 26%);
-  --bg-light: hsl(180, 14%, 97%);
-
   font-size: 62.5%;
   --nav-height: 7.2rem;
 }
@@ -28,5 +24,77 @@ body {
   font-family: Poppins;
   font-size: 1.6rem;
   overflow: overlay;
-  background: var(--bg-light);
+  background: #eeeeee;
+}
+
+header {
+  background: #666666;
+}
+
+header .container {
+  width: 98%;
+  height: 10vh;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .container .logo h1 {
+  font-size: 2rem;
+  font-weight: 400;
+
+  color: #fff;
+}
+
+/* Main */
+main {
+  height: 90vh;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Trabalhando a parte do navbar-left */
+main aside {
+  width: 22%;
+  background: #fff;
+}
+
+main aside ul {
+  margin-block: 2rem;
+  padding-inline: 4rem;
+}
+
+main section {
+  width: 78%;
+}
+
+/* Trabalhando no section principal */
+main section .container {
+  width: 96%;
+  margin: 5rem auto;
+}
+
+main section .container ul {
+  list-style: none;
+}
+
+main section .container .content {
+  background: #fff;
+  padding: 4rem;
+
+  display: flex;
+  gap: 1rem;
+}
+
+main section .container .content fieldset {
+  width: 50%;
+}
+
+main section .container .content fieldset legend {
+  text-align: center;
+  margin: auto 3rem;
 }
