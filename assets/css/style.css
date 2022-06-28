@@ -99,6 +99,20 @@ main section .container .content fieldset legend {
   margin: auto 3rem;
 }
 
+/* Table */
+main section .content-table {
+  display: flex;
+  gap: 2rem;
+  padding-inline: 1rem;
+}
+
+main section .content-table table,
+main section .content-table table th,
+main section .content-table table td {
+  border: 1px solid #000;
+}
+
+/* Formulário */
 main form {
   padding-inline: 1rem;
   padding-block: 1rem;

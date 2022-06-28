@@ -36,42 +36,25 @@
             <fieldset class="table-list">
               <legend>Listar | Ver</legend>
 
-              <table>
-                <thead>
-                  <tr>
-                    <th colspan="2">Nome</th>
-                    <th>Turma</th>
-                    <th>Opções</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Fulano</td>
-                    <td>Cicrano</td>
-                    <td>EIN3</td>
-                    <td>
-                      <a href="#">Ver |</a>
-                      <a href="#">Remover</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Fulano</td>
-                    <td>Cicrano</td>
-                    <td>EIN3</td>
-                    <td>
-                      <a href="#">Ver |</a>
-                      <a href="#">Remover</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="content-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th colspan="2">Nome</th>
+                      <th>Turma</th>
+                      <th>Opções</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbody"></tbody>
+                </table>
 
-              <div class="list-user">
-                <ul>
-                  <li>Nome: Fulano Cicrano</li>
-                  <li>Turma: EIN3</li>
-                  <li>Posição do aluno na turma: 1 de 3</li>
-                </ul>
+                <div class="list-user">
+                  <ul>
+                    <li>Nome: Fulano Cicrano</li>
+                    <li>Turma: EIN3</li>
+                    <li>Posição do aluno na turma: 1 de 3</li>
+                  </ul>
+                </div>
               </div>
             </fieldset>
 
@@ -112,48 +95,6 @@
       </section>
     </main>
 
-    <script>
-      const btn = document.getElementById("btnSubmit");
-
-      let inputFirstName = document.getElementById("firstName");
-      let inputLastName = document.getElementById("lastName");
-      let inputGroup = document.getElementById("turma");
-
-      const usersStudents = [
-        { firstName: "Esperdião", lastName: "Bastos", group: "A2" },
-      ];
-
-      function adicionarUsuario(e) {
-        e.preventDefault();
-
-        // Pegando valores adicionados pelo usuario
-        let firstName = inputFirstName.value;
-        let lastName = inputLastName.value;
-        let group = inputGroup.value;
-
-        // Adicionando os dados do input no objeto user
-        let user = { firstName, lastName, group };
-
-        // Verificando se existe um usuário com o mesmo nome
-        const usersExist = usersStudents.find(
-          ({ firstName }) => firstName === user.firstName
-        );
-
-        if (usersExist) {
-          alert("Existe um usuário");
-          return;
-        }
-        // Adicionar no meu array os usuários
-        usersStudents.push(user);
-        console.log(usersStudents);
-
-        // Fazendo um reset nos meus dados
-        inputFirstName.value = "";
-        inputLastName.value = "";
-        inputGroup.value = "";
-      }
-
-      btn.addEventListener("click", adicionarUsuario);
-    </script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
