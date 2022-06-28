@@ -14,14 +14,15 @@ const usersStudents = [
   { firstName: "Esperdião", lastName: "Bastos", group: "A2" },
 ];
 
-// Listar usuários
-function listarUsuarios() {
-  for (let user of usersStudents) {
-    tbody.innerHTML = `
+// Listar
+function listarUsuario() {
+  let htmlCode = "";
+  for (let index = 0; index < usersStudents.length; index++) {
+    htmlCode += `
         <tr>
-          <td>${user.firstName}</td>
-          <td>${user.lastName}</td>
-          <td>${user.group}</td>
+          <td>${usersStudents[index].firstName}</td>
+          <td>${usersStudents[index].lastName}</td>
+          <td>${usersStudents[index].group}</td>
           <td>
             <a href="#">Ver |</a>
             <a href="#">Remover</a>
@@ -29,8 +30,9 @@ function listarUsuarios() {
         </tr>
     `;
   }
+  tbody.innerHTML = htmlCode;
 }
-listarUsuarios();
+listarUsuario();
 
 // Adicionar usuários
 function adicionarUsuario(event) {
@@ -55,13 +57,7 @@ function adicionarUsuario(event) {
   }
   // Adicionar no meu array os usuários
   usersStudents.push(user);
-
-  for (let user of usersStudents) {
-    tbody.innerHTML += `${user.firstName}`;
-  }
-
-  console.log(usersStudents);
-
+  listarUsuario();
   // Fazendo um reset nos meus dados
   inputFirstName.value = "";
   inputLastName.value = "";
