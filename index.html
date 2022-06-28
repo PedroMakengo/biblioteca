@@ -77,7 +77,7 @@
 
             <fieldset class="register-user">
               <legend>Registar Aluno</legend>
-              <form onsubmit="register()">
+              <form>
                 <div class="group">
                   <label for="turma">Turma</label><br />
                   <input type="text" name="turma" id="turma" />
@@ -115,18 +115,45 @@
     <script>
       const btn = document.getElementById("btnSubmit");
 
-      let firstName = document.getElementById("firstName").value;
-      let lastName = document.getElementById("lastName").value;
-      let turma = document.getElementById("turma").value;
+      let inputFirstName = document.getElementById("firstName");
+      let inputLastName = document.getElementById("lastName");
+      let inputGroup = document.getElementById("turma");
 
-      const listUser = [];
+      const usersStudents = [
+        { firstName: "Esperdião", lastName: "Bastos", group: "A2" },
+      ];
 
-      btn.addEventListener("click", function (e) {
+      function adicionarUsuario(e) {
         e.preventDefault();
-        // Percorrendo todos os inputs do meu formulario
-        let users = { firstName, firstName, turma };
-        listUser.push(users);
-      });
+
+        // Pegando valores adicionados pelo usuario
+        let firstName = inputFirstName.value;
+        let lastName = inputLastName.value;
+        let group = inputGroup.value;
+
+        // Adicionando os dados do input no objeto user
+        let user = { firstName, lastName, group };
+
+        // Verificando se existe um usuário com o mesmo nome
+        const usersExist = usersStudents.find(
+          ({ firstName }) => firstName === user.firstName
+        );
+
+        if (usersExist) {
+          alert("Existe um usuário");
+          return;
+        }
+        // Adicionar no meu array os usuários
+        usersStudents.push(user);
+        console.log(usersStudents);
+
+        // Fazendo um reset nos meus dados
+        inputFirstName.value = "";
+        inputLastName.value = "";
+        inputGroup.value = "";
+      }
+
+      btn.addEventListener("click", adicionarUsuario);
     </script>
   </body>
 </html>
